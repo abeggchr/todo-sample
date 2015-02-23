@@ -2,5 +2,12 @@
   "name": "todo-sample.webapp",
   "version": "0.0.0",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "event-stream": "^3.2.2",
+    "gulp": "^3.8.11",
+    "gulp-debug": "^2.0.0",
+    "gulp-inject": "^1.2.0",
+    "gulp-util": "^3.0.3",
+    "main-bower-files": "^2.5.0"
+  }
 }
