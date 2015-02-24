@@ -8,12 +8,15 @@
  * model.
  */
 angular.module('todomvc')
-	.factory('todoStorage', function ($http, $injector) {
+	.factory('todoStorage', function ($http, $injector, REST_API_URL) {
 		'use strict';
 
 		// Detect if an API backend is present. If so, return the API module, else
 		// hand off the localStorage adapter
-		return $http.get('/api')
+
+        console.log(REST_API_URL);
+
+        return $http.get(REST_API_URL + '/version')
 			.then(function () {
 				return $injector.get('api');
 			}, function () {
@@ -21,7 +24,7 @@ angular.module('todomvc')
 			});
 	})
 
-	.factory('api', function ($http) {
+	.factory('api', function ($http, REST_API_URL) {
 		'use strict';
 
 		var store = {
@@ -42,7 +45,7 @@ angular.module('todomvc')
 
 				angular.copy(incompleteTodos, store.todos);
 
-				return $http.delete('/api/todos')
+				return $http.delete(REST_API_URL + '/todos')
 					.then(function success() {
 						return store.todos;
 					}, function error() {
@@ -56,7 +59,7 @@ angular.module('todomvc')
 
 				store.todos.splice(store.todos.indexOf(todo), 1);
 
-				return $http.delete('/api/todos/' + todo.id)
+				return $http.delete(REST_API_URL + '/api/todos/' + todo.id)
 					.then(function success() {
 						return store.todos;
 					}, function error() {
@@ -66,7 +69,7 @@ angular.module('todomvc')
 			},
 
 			get: function () {
-				return $http.get('/api/todos')
+			    return $http.get(REST_API_URL + '/todos')
 					.then(function (resp) {
 						angular.copy(resp.data, store.todos);
 						return store.todos;
@@ -76,7 +79,7 @@ angular.module('todomvc')
 			insert: function (todo) {
 				var originalTodos = store.todos.slice(0);
 
-				return $http.post('/api/todos', todo)
+				return $http.post(REST_API_URL + '/todos', todo)
 					.then(function success(resp) {
 						todo.id = resp.data.id;
 						store.todos.push(todo);
@@ -90,7 +93,7 @@ angular.module('todomvc')
 			put: function (todo) {
 				var originalTodos = store.todos.slice(0);
 
-				return $http.put('/api/todos/' + todo.id, todo)
+				return $http.put(REST_API_URL + '/todos/' + todo.id, todo)
 					.then(function success() {
 						return store.todos;
 					}, function error() {
