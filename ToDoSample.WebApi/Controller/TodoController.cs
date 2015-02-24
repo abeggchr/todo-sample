@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 using ToDoSample.WebApi.Models;
@@ -9,19 +10,56 @@ namespace ToDoSample.WebApi.Controller
     {
         private static List<ToDoItemDto> ToDoRepo = new List<ToDoItemDto>();
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/todos")]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult Create([FromBody]ToDoItemDto item)
         {
-            var todos = new List<ToDoItemDto>();
+            item.Id = ToDoRepo.Count + 1;
 
-            todos.Add(new ToDoItemDto() { Id = 73736787, Completed = false, Title = "First ToDo" });
-            todos.Add(new ToDoItemDto() { Id = 39474535, Completed = false, Title = "Second ToDo" });
-            todos.Add(new ToDoItemDto() { Id = 93798798, Completed = false, Title = "Third ToDo" });
+            ToDoRepo.Add(item);
 
             return this.Ok(ToDoRepo);
         }
 
+        [HttpGet]
+        [Route("api/todos")]
+        public IHttpActionResult Read()
+        {
+            return this.Ok(ToDoRepo);
+        }
 
+        [HttpPut]
+        [Route("api/todos/{itemId}")]
+        public IHttpActionResult Update(int itemId, [FromBody]ToDoItemDto item)
+        {
+            var foundItem = ToDoRepo.FirstOrDefault(t => t.Id == itemId);
+
+            if (foundItem != null)
+            {
+                foundItem.Completed = item.Completed;
+                foundItem.Title = item.Title;
+
+                return this.Ok(ToDoRepo);
+            }
+
+            return this.NotFound();
+        }
+
+        [HttpDelete]
+        [Route("api/todos/{itemId}")]
+        public IHttpActionResult Delete(int itemId)
+        {
+            var foundItem = ToDoRepo.FirstOrDefault(t => t.Id == itemId);
+
+            if (foundItem != null)
+            {
+                ToDoRepo.Remove(foundItem);
+                return this.Ok(ToDoRepo);
+            }
+
+            return this.NotFound();
+        }
+    
+   
     }
 }
