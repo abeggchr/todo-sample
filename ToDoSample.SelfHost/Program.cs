@@ -15,7 +15,7 @@ namespace ToDoSample.SelfHost
     {
         static void Main(string[] args)
         {
-            string baseAddress = "http://localhost:89/";
+            string baseAddress = Properties.Settings.Default.BaseAddress;
 
             // Start OWIN host 
             using (WebApp.Start<Startup>(url: baseAddress))
