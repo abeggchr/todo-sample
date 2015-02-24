@@ -5,7 +5,7 @@ using ToDoSample.WebApi.Models;
 
 namespace ToDoSample.WebApi.Controller
 {
-    public class TodoController : ApiController
+    public class ToDoController : ApiController
     {
         private static List<ToDoItemDto> ToDoRepo = new List<ToDoItemDto>();
 
