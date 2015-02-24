@@ -1,9 +1,9 @@
-﻿namespace ToDoSample.WebApi
+﻿namespace ToDoSample.WebApi.Models
 {
     /// <summary>
     /// The ToDo item.
     /// </summary>
-    public class ToDoItem
+    public class ToDoItemDto
     {
         /// <summary>
         /// Gets or sets the title.
