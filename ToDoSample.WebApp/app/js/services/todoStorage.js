@@ -59,7 +59,7 @@ angular.module('todomvc')
 
 				store.todos.splice(store.todos.indexOf(todo), 1);
 
-				return $http.delete(REST_API_URL + '/api/todos/' + todo.id)
+				return $http.delete(REST_API_URL + '/todos/' + todo.id)
 					.then(function success() {
 						return store.todos;
 					}, function error() {
