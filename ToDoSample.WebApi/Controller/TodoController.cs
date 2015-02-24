@@ -18,7 +18,7 @@ namespace ToDoSample.WebApi.Controller
 
             ToDoRepo.Add(item);
 
-            return this.Ok(ToDoRepo);
+            return this.Ok(item);
         }
 
         [HttpGet]
