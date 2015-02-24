@@ -1,2 +1,9 @@
-bower_components
-node_modules
+**/packages/*
+**/bower_components/**
+**/node_modules/**
+
+**/bin/Debug/**
+**/bin/Release/**
+**/obj/**
+
+*.suo
