@@ -10,14 +10,14 @@ namespace ToDoSample.Service
     /// <summary>
     /// The service 1.
     /// </summary>
-    public partial class Service1 : ServiceBase
+    public partial class ToDoSampleService : ServiceBase
     {
         private IDisposable app;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Service1"/> class.
+        /// Initializes a new instance of the <see cref="ToDoSampleService"/> class.
         /// </summary>
-        public Service1()
+        public ToDoSampleService()
         {
             InitializeComponent();
         }
@@ -39,7 +39,10 @@ namespace ToDoSample.Service
         /// </summary>
         protected override void OnStop()
         {
-            this.app.Dispose();
+            if (this.app != null)
+            {
+                this.app.Dispose();
+            }
         }
     }
 }
