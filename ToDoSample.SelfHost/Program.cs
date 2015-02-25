@@ -16,6 +16,7 @@ namespace ToDoSample.SelfHost
         static void Main(string[] args)
         {
             string baseAddress = Properties.Settings.Default.BaseAddress;
+            string testAddress = Properties.Settings.Default.BaseAddress.Replace("*", "localhost");
 
             // Start OWIN host 
             using (WebApp.Start<Startup>(url: baseAddress))
@@ -23,13 +24,12 @@ namespace ToDoSample.SelfHost
                 // Create HttpCient and make a request to api/values 
                 HttpClient client = new HttpClient();
 
-                var response = client.GetAsync(baseAddress + "api/version").Result;
+                var response = client.GetAsync(testAddress + "api/version").Result;
 
                 Console.WriteLine(response);
                 Console.WriteLine(response.Content.ReadAsStringAsync().Result);
 
                 Console.ReadLine(); 
-
             }
         }
     }
