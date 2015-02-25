@@ -14,7 +14,7 @@ The build consists of two chains
 * optional nuget for packageing
 
 ## Useful Links
-
+* Baby steps with gulp.js: http://jairtrejo.mx/blog/2014/11/baby-steps-with-gulp
 * A Beginners Guide to Package Manager Bower and Using Gulp to Manage Components Beginneers http://andy-carter.com/blog/a-beginners-guide-to-package-manager-bower-and-using-gulp-to-manage-components
 * gulp-inject: https://www.npmjs.com/package/gulp-inject
 * Set Working Directory in gulpfile: http://stackoverflow.com/questions/27236437/set-working-directory-in-gulpfile-js
