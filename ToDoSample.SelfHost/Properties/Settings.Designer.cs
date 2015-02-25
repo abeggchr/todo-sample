@@ -25,7 +25,7 @@ namespace ToDoSample.SelfHost.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:89/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://*:89/")]
         public string BaseAddress {
             get {
                 return ((string)(this["BaseAddress"]));

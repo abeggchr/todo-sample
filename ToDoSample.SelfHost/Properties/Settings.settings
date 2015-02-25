@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="BaseAddress" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost:89/</Value>
+      <Value Profile="(Default)">http://*:89/</Value>
     </Setting>
   </Settings>
 </SettingsFile>
