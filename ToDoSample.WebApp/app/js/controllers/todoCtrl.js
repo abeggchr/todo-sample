@@ -6,13 +6,28 @@
  * - exposes the model to the template and provides event handlers
  */
 angular.module('todomvc')
-	.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, store) {
+	.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, $http, store, APP_RELEASE, APP_ENVIRONMENT, REST_API_URL) {
 		'use strict';
 
 		var todos = $scope.todos = store.todos;
 
 		$scope.newTodo = '';
 		$scope.editedTodo = null;
+
+		$scope.appRelease = APP_RELEASE;
+		$scope.appEnvironment = APP_ENVIRONMENT;
+		$scope.restApiUrl = REST_API_URL;
+
+        // Load Backend Version info
+		$scope.restApiVersion = false;
+        $http.get(REST_API_URL + '/version').then(function(resp) {
+
+            var versionInfo = resp.data;
+            $scope.restApiVersion = versionInfo;
+            console.log(resp);
+
+            return store.todos;
+        });
 
 		$scope.$watch('todos', function () {
 			$scope.remainingCount = $filter('filter')(todos, { completed: false }).length;

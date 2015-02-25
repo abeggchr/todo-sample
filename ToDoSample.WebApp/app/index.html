@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-framework="angularjs">
 	<head>
 		<meta charset="utf-8">
@@ -16,7 +16,7 @@
 	<body ng-app="todomvc">
 		<ng-view />
 
-		<script type="text/ng-template" id="todomvc-index.html">
+	<script type="text/ng-template" id="todomvc-index.html">
 			<section id="todoapp">
 				<header id="header">
 					<h1>todos</h1>
@@ -58,6 +58,12 @@
 					<button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
 				</footer>
 			</section>
+        
+            <h2><i class="fa fa-info-circle"></i> Version / Release Info</h2>
+            <p>
+                <i class="fa fa-desktop"></i> Frontend: {{appRelease}}, Environment: {{appEnvironment}}<br />
+                <i class="fa fa-server"></i> Backend: <span ng-hide="restApiVersion"><i class="fa fa-spin fa-spinner"></i> Loading</span><span ng-show="restApiVersion">{{restApiVersion.fullVersion}} <a href="{{restApiUrl}}/version">Details</a></span>
+</p>
 			<footer id="info">
 				<p>Double-click to edit a todo</p>
 				<p>Credits:

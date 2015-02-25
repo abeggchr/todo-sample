@@ -21,7 +21,7 @@ namespace ToDoSample.WebApi.Controller
         {
             var versionInfo = AssemblyVersionHelper.GetVersion(this.GetType().Assembly, Settings.Default.Environment);
 
-            return this.Json(versionInfo);
+            return this.Ok(versionInfo);
         }
 
     }
