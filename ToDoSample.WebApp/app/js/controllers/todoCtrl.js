@@ -20,14 +20,23 @@ angular.module('todomvc')
 
         // Load Backend Version info
 		$scope.restApiVersion = false;
-        $http.get(REST_API_URL + '/version').then(function(resp) {
 
-            var versionInfo = resp.data;
-            $scope.restApiVersion = versionInfo;
-            console.log(resp);
 
-            return store.todos;
-        });
+        var getApiVersion = function() {
+
+            $http.get(REST_API_URL + '/version').then(function(resp) {
+
+                var versionInfo = resp.data;
+                $scope.restApiVersion = versionInfo;
+
+                return store.todos;
+            }, function() {
+                setTimeout(getApiVersion, 1000);
+            });
+
+        };
+
+        getApiVersion();
 
 		$scope.$watch('todos', function () {
 			$scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
