@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Todo-Sample.WebApi</id>
+        <title>Todo-Sample.WebApi</title>
+        <version>0.1.0</version>
+        <authors>Michael Schnyder, Tobias Zürcher</authors>
+        <owners>Michael Schnyder, Tobias Zürcher</owners>
+        <licenseUrl>http://zuehlke.com</licenseUrl>
+        <projectUrl>http://zuehlke.com</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>tbd</description>
+        <releaseNotes>tbd</releaseNotes>
+    </metadata>
+    <files>
+        <file src="TodoSample.WebApi\bin\$configuration$\**" />
+    </files>
+</package>

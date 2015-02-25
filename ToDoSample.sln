@@ -30,6 +30,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSample.SelfHost", "ToDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSample.Service", "ToDoSample.Service\ToDoSample.Service.csproj", "{D6D7C8E8-7C39-42E2-8968-03D1452AE725}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{D801F987-A323-4B70-9397-4A771673AC5B}"
+	ProjectSection(SolutionItems) = preProject
+		ToDoSample.WebApi.nuspec = ToDoSample.WebApi.nuspec
+		ToDoSample.WebApp.nuspec = ToDoSample.WebApp.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
