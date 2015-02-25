@@ -7,11 +7,15 @@ This template is based on the todomvc.com sample for angularjs. Therefore, the f
 * AngularJS
 * ASP.NET WebAPI (SelfHosted)
  
-## Build
-The build consists of two chains
-* NodeJs with npm gulp and bower (install gulp and bower in global)
-* msbuild
-* optional nuget for packageing
+## 
+What do you need to build?
+* NodeJs
+* gulp in global (npm install gulp-cli -g)
+* bower in global (npm install bower -g)
+* git (available in PATH)
+* .NET SDK 4.5.1 (Windows 8.1 SDK, http://msdn.microsoft.com/en-us/windows/desktop/bg162891.aspx)
+* Microsoft Build Tools 2013 (http://go.microsoft.com/?linkid=9832060, from http://www.visualstudio.com/en-us/downloads)
+* NuGet.exe for Packageing (place it in PATH) from http://nuget.org/nuget.exe
 
 ## Useful Links
 * Baby steps with gulp.js: http://jairtrejo.mx/blog/2014/11/baby-steps-with-gulp
