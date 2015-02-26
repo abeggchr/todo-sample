@@ -48,6 +48,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoSample.WebApi\ToDoSample.WebApi.csproj">
+      <Project>{91a48868-9f76-4b76-8e4f-28cde63c7532}</Project>
+      <Name>ToDoSample.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
