@@ -8,6 +8,6 @@ angular.module('settings', []);
 
     AppSettingsModule.constant('REST_API_URL', baseUrl + 'api');
 
-    AppSettingsModule.constant('APP_ENVIRONMENT', '#(Octopus.Environment.Name)');
+    AppSettingsModule.constant('APP_ENVIRONMENT', '#{Octopus.Environment.Name}');
     AppSettingsModule.constant('APP_RELEASE', '#{Octopus.Release.Number}');
 })();
