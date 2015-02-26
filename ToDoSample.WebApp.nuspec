@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata>
-        <id>Todo-Sample.WebApp</id>
-        <title>Todo-Sample.WebApp</title>
-        <version>0.0.0</version>
-        <authors>Michael Schnyder, Tobias Zürcher</authors>
-        <owners>Michael Schnyder, Tobias Zürcher</owners>
-        <licenseUrl>http://zuehlke.com</licenseUrl>
-        <projectUrl>http://zuehlke.com</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>tbd</description>
-        <releaseNotes>tbd</releaseNotes>
-    </metadata>
-    <files>
-        <file src="ToDoSample.WebApp\index.html" />
-        <file src="ToDoSample.WebApp\app\**" target="app" />
-        <file src="ToDoSample.WebApp\bower_components\**" target="bower_components"/>
-    </files>
+  <metadata>
+    <id>Todo-Sample.WebApp</id>
+    <title>Todo-Sample.WebApp</title>
+    <version>0.0.0.0</version> !-- set by ci build -->
+    <authors>Michael Schnyder, Tobias Zürcher</authors>
+    <owners>Michael Schnyder, Tobias Zürcher</owners>
+    <licenseUrl>http://zuehlke.com</licenseUrl>
+    <projectUrl>http://zuehlke.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>tbd</description>
+    <releaseNotes>tbd</releaseNotes>
+  </metadata>
+  <files>
+    <file src="ToDoSample.WebApp\index.html" />
+    <file src="ToDoSample.WebApp\app\**" target="app" />
+    <file src="ToDoSample.WebApp\bower_components\**" target="bower_components"/>
+  </files>
 </package>
