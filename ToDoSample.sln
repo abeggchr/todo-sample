@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSample.Service", "ToDoS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspec", "Nuspec", "{D801F987-A323-4B70-9397-4A771673AC5B}"
 	ProjectSection(SolutionItems) = preProject
-		ToDoSample.WebApi.nuspec = ToDoSample.WebApi.nuspec
+		ToDoSample.Service.nuspec = ToDoSample.Service.nuspec
 		ToDoSample.WebApp.nuspec = ToDoSample.WebApp.nuspec
 	EndProjectSection
 EndProject
