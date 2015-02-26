@@ -3,9 +3,9 @@
     <metadata>
         <id>Todo-Sample.WebApi</id>
         <title>Todo-Sample.WebApi</title>
-        <version>0.1.0</version>
-        <authors>Michael Schnyder, Tobias Zürcher</authors>
-        <owners>Michael Schnyder, Tobias Zürcher</owners>
+        <version>0.0.0</version> <!-- set by ci build -->
+        <authors>Michael Schnyder, Tobias Zuercher</authors>
+        <owners>Michael Schnyder, Tobias Zuercher</owners>
         <licenseUrl>http://zuehlke.com</licenseUrl>
         <projectUrl>http://zuehlke.com</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>

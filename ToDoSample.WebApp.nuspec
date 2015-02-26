@@ -3,9 +3,9 @@
     <metadata>
         <id>Todo-Sample.WebApp</id>
         <title>Todo-Sample.WebApp</title>
-        <version>0.1.0</version>
-        <authors>Michael Schnyder, Tobias Zürcher</authors>
-        <owners>Michael Schnyder, Tobias Zürcher</owners>
+        <version>0.0.0</version> <!-- set by ci build -->
+        <authors>Michael Schnyder, Tobias Zuercher</authors>
+        <owners>Michael Schnyder, Tobias Zuercher</owners>
         <licenseUrl>http://zuehlke.com</licenseUrl>
         <projectUrl>http://zuehlke.com</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -13,6 +13,6 @@
         <releaseNotes>tbd</releaseNotes>
     </metadata>
     <files>
-        <file src="ToDoSample.WebApp\app\**" />
+        <file src="ToDoSample.WebApp\**" />
     </files>
 </package>
