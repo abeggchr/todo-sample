@@ -3,7 +3,7 @@
     <metadata>
         <id>Todo-Sample.WebApp</id>
         <title>Todo-Sample.WebApp</title>
-        <version>0.1.0</version>
+        <version>0.0.0</version>
         <authors>Michael Schnyder, Tobias Zürcher</authors>
         <owners>Michael Schnyder, Tobias Zürcher</owners>
         <licenseUrl>http://zuehlke.com</licenseUrl>
@@ -13,6 +13,8 @@
         <releaseNotes>tbd</releaseNotes>
     </metadata>
     <files>
-        <file src="ToDoSample.WebApp\app\**" />
+        <file src="ToDoSample.WebApp\index.html" />
+        <file src="ToDoSample.WebApp\app\**" target="app" />
+        <file src="ToDoSample.WebApp\bower_components\**" target="bower_components"/>
     </files>
 </package>
