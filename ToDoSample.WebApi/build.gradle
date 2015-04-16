@@ -1,0 +1,23 @@
+plugins {
+  id "com.ullink.msbuild" version "2.3"
+  id "com.ullink.nuget" version "2.4"
+}
+
+msbuild {
+  // mandatory
+  projectFile = file('ToDoSample.WebApi.csproj')
+
+  // MsBuild project name (/p:Project=...)
+  projectName = 'ToDoSample.WebApi'
+
+  // targets to execute (/t:Clean;Rebuild, no default)
+  targets = ['Clean', 'Rebuild']
+}
+
+// Error:
+// Package restore is disabled by default. To give consent, open the Visual Studio
+// Options dialog, click on Package Manager node and check 'Allow NuGet to download
+// missing packages during build.' You can also give consent by setting the enviro
+// nment variable 'enableNuGetPackageRestore' to 'true'. -> gradle.properties
+
+msbuild.dependsOn nugetRestore

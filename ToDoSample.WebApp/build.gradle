@@ -1,0 +1,45 @@
+plugins {
+  id "com.moowork.gulp" version "0.9"
+}
+
+node {
+  // Version of node to use.
+  // version = '0.11.10'
+
+  // Version of npm to use.
+  // npmVersion = '2.1.5'
+
+  // Base URL for fetching node distributions (change if you have a mirror).
+  // distBaseUrl = 'http://nodejs.org/dist'
+
+  // If true, it will download node using above parameters.
+  // If false, it will try to use globally installed node.
+  download = true
+
+  // Set the work directory for unpacking node
+  // workDir = file("${project.buildDir}/nodejs")
+
+  // Set the work directory where node_modules should be located
+  //nodeModulesDir = file("${project.projectDir}")
+}
+
+task npmInstallBower(type: NpmTask) {
+  args = ['install', 'bower']
+}
+npmInstallBower.dependsOn npmInstall
+
+task bowerInstall(type: NodeTask) {
+  inputs.file "bower.json"
+  outputs.dir "bower_components"
+  script = file('node_modules/bower/bin/bower')
+  args = ['install']
+}
+bowerInstall.dependsOn npmInstallBower
+
+gulp_inject.dependsOn bowerInstall
+gulp_inject.dependsOn installGulp
+gulp_inject.dependsOn npmInstall
+
+// build.dependsOn gulp_inject
+
+// build.dependsOn nuGetPack  // this task can be implemented with the nuGet plugin
