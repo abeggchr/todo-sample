@@ -6,6 +6,8 @@
 **/bin/Release/**
 **/obj/**
 
+.gradle
+
 *.suo
 *.nupkg
 *.user
